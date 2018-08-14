@@ -10,6 +10,7 @@ import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.widgets.Spinner
 import org.uqbar.arena.bindings.ObservableProperty
 import java.util.List
+import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 
 class Ejercicio2 extends MainWindow<Ejercicio2Dominio>{
 	
@@ -35,7 +36,15 @@ class Ejercicio2 extends MainWindow<Ejercicio2Dominio>{
 			width = 200
 		]
 		new Selector(panelPrincipal) => [
-			bindItems(new ObservableProperty(this, "listaDeGeneros"))
+			
+//			Para usar estos , tenes que usar este import:
+//
+//			import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
+			
+//			items <=> "listaDeGeneros"  // esta es la lista de donde sacas, tiene que estar en el viewModel o dominio Generalmente el modelo esta en esta clase en el generic MainWindow<CLASE>
+//			value <=> "genero" // esta es la propiedad donde se la va a bindear
+			
+			bindItems(new ObservableProperty("listaDeGeneros"))
 			bindValueToProperty("genero")
 		]
 		
