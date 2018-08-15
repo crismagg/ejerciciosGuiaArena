@@ -21,20 +21,19 @@ class Ejercicio3Vista extends MainWindow<Ejercicio3> {
 		new Label(mainPanel).text = "Frase"
 		new TextBox(mainPanel) => [
 			value <=> "frase"
-			//Llamar al transformer aca
+			// Llamar al transformer aca
 			width = 200
 		]
-		
+
 		new Label(mainPanel) => [
-		//	(value <=> "fraseAlReves").transformer = new TransformerColor
-			//(value <=> "frase").transformer = new TransformerColor
-		] 
-		
+			value <=> "fraseAlReves"
+			bindForegroundToProperty("esPalindromo").transformer = new TransformerColor
+		]
+
 	}
 
 	def static main(String[] args) {
 		new Ejercicio3Vista().startApplication
 	}
-	
+
 }
-	
